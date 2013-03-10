@@ -25,11 +25,5 @@ namespace XSockets.Windows.Service.Host
             }
         }
 
-        
-
-      
-
-     
-
     }
 }
