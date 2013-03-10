@@ -15,8 +15,6 @@ Unregister (Uninstall) the service
 
 InstallUtil.exe XSockets.Windows.Service.exe /u
 
-
-
 # Note
 
 Do you have dependencies on external assemblies in your "controllers"?
@@ -28,10 +26,10 @@ then apply your changes to "XSockets.Windows.Service.Configuration"
 
 The example configuration is defined to answer on the following url;
 
-ws://127.0.0.1:9090/Generic
+ws://127.0.0.1:4503
 
 As we included the XSockets.Extensibility.Handlers plugin you will be able
-to use the "Generic" Controller.   Just remove that assebly from the references to disable that functionallity.
+to use the "Generic" Controller (Just remove that assembly from the references to disable that functionallity.)
 
 ================================================
 
