@@ -25,9 +25,8 @@ Apply your changes to the app.config ("XSockets.Windows.Service.Configuration")
 
 The example configuration is defined to answer on the following url and origins;
 
-<add key="XSockets.Url" value="ws://127.0.0.1:4506" />
-
-<add key="XSockets.Origins" value="http://*,https://*" />
+Url: ws://127.0.0.1:4506"
+Origins: http://*,https://*
 
 As we included the XSockets.Extensibility.Handlers plugin you will be able
 to use the "Generic" Controller (Just remove that assembly from the references to disable that functionallity.)
