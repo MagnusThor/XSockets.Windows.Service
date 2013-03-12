@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using XSockets.Core.Common.Configuration;
-using XSockets.Core.Configuration;
 using XSockets.Plugin.Framework.Core.Attributes;
+using ConfigurationSettings = XSockets.Core.Configuration.ConfigurationSettings;
 
 namespace XSockets.Windows.Service.Configuration
 {
@@ -49,17 +50,14 @@ namespace XSockets.Windows.Service.Configuration
             {
                 if (_settings == null)
                 {
-                    
-                    // You will need to set a non local ip / host
-                    var uri = GetUri("ws://127.0.0.1:4503"); 
-
-                    // If you are using a host name, use the IPEndpoint as shown on line 70 below.
+                    var uri = GetUri(ConfigurationManager.AppSettings["XSockets.Url"]); // Reading from app.config
 
                     _settings = new ConfigurationSettings
                     {
                         
                         Port = uri.Port,
-                        Origin = new List<string> { "*" },  // Specify your origins here e.g http://xsockets.net
+                        //Origin = new List<string> { "*" },  // Specify your origins here e.g http://xsockets.net
+                        Origin = ConfigurationManager.AppSettings["XSockets.Origins"].Split(',').ToList(),  // Reading from app.config  
                         Location = uri.Host,
                         Scheme = uri.Scheme,
                         Uri = uri,
@@ -67,7 +65,7 @@ namespace XSockets.Windows.Service.Configuration
                         RemoveInactiveStorageAfterXDays = 7,
                         RemoveInactiveChannelsAfterXMinutes = 30,
                         NumberOfAllowedConections = -1,
-                      //  Endpoint = CreateIPEndpoint(uri)
+                        Endpoint = CreateIPEndpoint(uri)
                     };
                 }
                 return _settings;
