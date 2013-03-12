@@ -1,13 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{2D51CE99-C202-4281-9C2D-448BA7068290}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSockets.Windows.Service", "XSockets.Windows.Service\XSockets.Windows.Service.csproj", "{A1E7C8EC-FB05-4A63-A413-F17B41386851}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSockets.Windows.Service.Configuration", "XSockets.Windows.Service.Configuration\XSockets.Windows.Service.Configuration.csproj", "{869858E7-88F5-45F1-85E3-DC8468667B09}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{1E42791D-E5F8-4C83-BD00-FD541EE406F8}"
+	ProjectSection(SolutionItems) = preProject
+		Dependencies\XSockets.Core.Common.dll = Dependencies\XSockets.Core.Common.dll
+		Dependencies\XSockets.Core.Communication.dll = Dependencies\XSockets.Core.Communication.dll
+		Dependencies\XSockets.Core.dll = Dependencies\XSockets.Core.dll
+		Dependencies\XSockets.Extensibility.Handlers.dll = Dependencies\XSockets.Extensibility.Handlers.dll
+		Dependencies\XSockets.Extensibility.Interceptors.dll = Dependencies\XSockets.Extensibility.Interceptors.dll
+		Dependencies\XSockets.Plugin.Framework.Core.dll = Dependencies\XSockets.Plugin.Framework.Core.dll
+		Dependencies\XSockets.Plugin.Framework.dll = Dependencies\XSockets.Plugin.Framework.dll
+		Dependencies\XSockets.Protocol.dll = Dependencies\XSockets.Protocol.dll
+		Dependencies\XSockets.Server.dll = Dependencies\XSockets.Server.dll
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSockets.Windows.Service.Host", "XSockets.Windows.Service.Host\XSockets.Windows.Service.Host.csproj", "{0EB3E196-D0A7-4007-B926-A819124DF177}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSockets.Windows.Service", "XSockets.Windows.Service\XSockets.Windows.Service.csproj", "{29AE55EC-3B15-4C0F-97E7-52AC741A97F0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSockets.Windows.Service.Host", "XSockets.Windows.Service.Host\XSockets.Windows.Service.Host.csproj", "{C6441C54-73FB-4386-B22D-8F2322C3C72C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +24,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{869858E7-88F5-45F1-85E3-DC8468667B09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{869858E7-88F5-45F1-85E3-DC8468667B09}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{869858E7-88F5-45F1-85E3-DC8468667B09}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{869858E7-88F5-45F1-85E3-DC8468667B09}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0EB3E196-D0A7-4007-B926-A819124DF177}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0EB3E196-D0A7-4007-B926-A819124DF177}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0EB3E196-D0A7-4007-B926-A819124DF177}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0EB3E196-D0A7-4007-B926-A819124DF177}.Release|Any CPU.Build.0 = Release|Any CPU
-		{29AE55EC-3B15-4C0F-97E7-52AC741A97F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{29AE55EC-3B15-4C0F-97E7-52AC741A97F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{29AE55EC-3B15-4C0F-97E7-52AC741A97F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{29AE55EC-3B15-4C0F-97E7-52AC741A97F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1E7C8EC-FB05-4A63-A413-F17B41386851}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1E7C8EC-FB05-4A63-A413-F17B41386851}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1E7C8EC-FB05-4A63-A413-F17B41386851}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1E7C8EC-FB05-4A63-A413-F17B41386851}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6441C54-73FB-4386-B22D-8F2322C3C72C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6441C54-73FB-4386-B22D-8F2322C3C72C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6441C54-73FB-4386-B22D-8F2322C3C72C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6441C54-73FB-4386-B22D-8F2322C3C72C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

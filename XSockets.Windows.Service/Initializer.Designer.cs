@@ -1,6 +1,6 @@
 ﻿namespace XSockets.Windows.Service
 {
-    partial class Container
+    partial class Initializer
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            // 
+            // Initializer
+            // 
             this.ServiceName = "Service1";
+
         }
 
         #endregion
+
     }
 }

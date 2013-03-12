@@ -1,29 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Net;
 using XSockets.Core.Common.Configuration;
 using XSockets.Plugin.Framework.Core.Attributes;
-using ConfigurationSettings = XSockets.Core.Configuration.ConfigurationSettings;
 
-namespace XSockets.Windows.Service.Configuration
+namespace XSockets.Windows.Service.Host
 {
     [Export(typeof(IConfigurationLoader))]
     public class ConfigurationLoader : IConfigurationLoader
     {
-        public IConfigurationSettings _settings = null;
+        public IConfigurationSettings Settings = null;
 
         public Uri GetUri(string url)
         {
-            try
-            {
-                return new Uri(url);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            return new Uri(url);
         }
 
 
@@ -48,13 +39,13 @@ namespace XSockets.Windows.Service.Configuration
         {
             get
             {
-                if (_settings == null)
+                if (Settings == null)
                 {
                     var uri = GetUri(ConfigurationManager.AppSettings["XSockets.Url"]); // Reading from app.config
 
-                    _settings = new ConfigurationSettings
+                    Settings = new Core.Configuration.ConfigurationSettings
                     {
-                        
+
                         Port = uri.Port,
                         //Origin = new List<string> { "*" },  // Specify your origins here e.g http://xsockets.net
                         Origin = ConfigurationManager.AppSettings["XSockets.Origins"].Split(',').ToList(),  // Reading from app.config  
@@ -68,7 +59,7 @@ namespace XSockets.Windows.Service.Configuration
                         Endpoint = CreateIPEndpoint(uri)
                     };
                 }
-                return _settings;
+                return Settings;
             }
         }
     }

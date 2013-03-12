@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{29AE55EC-3B15-4C0F-97E7-52AC741A97F0}</ProjectGuid>
+    <ProjectGuid>{A1E7C8EC-FB05-4A63-A413-F17B41386851}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>XSockets.Windows.Service</RootNamespace>
@@ -58,9 +58,6 @@
     <Reference Include="XSockets.Extensibility.Interceptors">
       <HintPath>..\Dependencies\XSockets.Extensibility.Interceptors.dll</HintPath>
     </Reference>
-    <Reference Include="XSockets.External">
-      <HintPath>..\Dependencies\XSockets.External.dll</HintPath>
-    </Reference>
     <Reference Include="XSockets.Plugin.Framework">
       <HintPath>..\Dependencies\XSockets.Plugin.Framework.dll</HintPath>
     </Reference>
@@ -75,11 +72,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Container.cs">
+    <Compile Include="Initializer.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Container.Designer.cs">
-      <DependentUpon>Container.cs</DependentUpon>
+    <Compile Include="Initializer.Designer.cs">
+      <DependentUpon>Initializer.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProjectInstaller.cs">
@@ -91,25 +88,23 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\XSockets.Windows.Service.Configuration\XSockets.Windows.Service.Configuration.csproj">
-      <Project>{869858e7-88f5-45f1-85e3-dc8468667b09}</Project>
-      <Name>XSockets.Windows.Service.Configuration</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\XSockets.Windows.Service.Host\XSockets.Windows.Service.Host.csproj">
-      <Project>{0eb3e196-d0a7-4007-b926-a819124df177}</Project>
-      <Name>XSockets.Windows.Service.Host</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
+    <EmbeddedResource Include="Initializer.resx">
+      <DependentUpon>Initializer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProjectInstaller.resx">
       <DependentUpon>ProjectInstaller.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="readme.txt" />
+    <ProjectReference Include="..\XSockets.Windows.Service.Host\XSockets.Windows.Service.Host.csproj">
+      <Project>{c6441c54-73fb-4386-b22d-8f2322c3c72c}</Project>
+      <Name>XSockets.Windows.Service.Host</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

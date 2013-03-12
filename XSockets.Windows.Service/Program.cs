@@ -1,20 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.ServiceProcess;
-using System.Text;
+﻿using System.ServiceProcess;
 
 namespace XSockets.Windows.Service
 {
     static class Program
     {
-       
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
         static void Main()
         {
-            ServiceBase[] ServicesToRun = new ServiceBase[] 
-                { 
-                    new Container() 
-                };
+            ServiceBase[] ServicesToRun;
+            ServicesToRun = new ServiceBase[] 
+            { 
+                new Initializer() 
+            };
             ServiceBase.Run(ServicesToRun);
         }
     }

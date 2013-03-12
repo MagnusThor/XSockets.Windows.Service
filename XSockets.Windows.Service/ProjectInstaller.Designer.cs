@@ -28,32 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.serviceProcessInstaller1 = new System.ServiceProcess.ServiceProcessInstaller();
-            this.serviceInstaller1 = new System.ServiceProcess.ServiceInstaller();
+            this.XSocketsServiceProcessInstaller = new System.ServiceProcess.ServiceProcessInstaller();
+            this.XSocketsInstaller = new System.ServiceProcess.ServiceInstaller();
             // 
-            // serviceProcessInstaller1
+            // XSocketsServiceProcessInstaller
             // 
-            this.serviceProcessInstaller1.Account = System.ServiceProcess.ServiceAccount.NetworkService;
-            this.serviceProcessInstaller1.Password = null;
-            this.serviceProcessInstaller1.Username = null;
+            this.XSocketsServiceProcessInstaller.Account = System.ServiceProcess.ServiceAccount.LocalSystem;
+            this.XSocketsServiceProcessInstaller.Password = null;
+            this.XSocketsServiceProcessInstaller.Username = null;
             // 
-            // serviceInstaller1
+            // XSocketsInstaller
             // 
-            this.serviceInstaller1.Description = "XSockets.NET Windows Service";
-            this.serviceInstaller1.DisplayName = "XSockets.NET";
-            this.serviceInstaller1.ServiceName = "XSockets";
+            this.XSocketsInstaller.ServiceName = "XSockets";
+            this.XSocketsInstaller.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 
             // ProjectInstaller
             // 
             this.Installers.AddRange(new System.Configuration.Install.Installer[] {
-            this.serviceProcessInstaller1,
-            this.serviceInstaller1});
+            this.XSocketsServiceProcessInstaller,
+            this.XSocketsInstaller});
 
         }
 
         #endregion
 
-        private System.ServiceProcess.ServiceProcessInstaller serviceProcessInstaller1;
-        private System.ServiceProcess.ServiceInstaller serviceInstaller1;
+        private System.ServiceProcess.ServiceProcessInstaller XSocketsServiceProcessInstaller;
+        private System.ServiceProcess.ServiceInstaller XSocketsInstaller;
     }
 }

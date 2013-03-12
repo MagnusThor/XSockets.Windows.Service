@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0EB3E196-D0A7-4007-B926-A819124DF177}</ProjectGuid>
+    <ProjectGuid>{C6441C54-73FB-4386-B22D-8F2322C3C72C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>XSockets.Windows.Service.Host</RootNamespace>
     <AssemblyName>XSockets.Windows.Service.Host</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,7 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,9 +44,6 @@
     <Reference Include="XSockets.Core.Common">
       <HintPath>..\Dependencies\XSockets.Core.Common.dll</HintPath>
     </Reference>
-    <Reference Include="XSockets.Core.Communication">
-      <HintPath>..\Dependencies\XSockets.Core.Communication.dll</HintPath>
-    </Reference>
     <Reference Include="XSockets.Plugin.Framework">
       <HintPath>..\Dependencies\XSockets.Plugin.Framework.dll</HintPath>
     </Reference>
@@ -56,6 +52,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigurationLoader.cs" />
     <Compile Include="Instance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
