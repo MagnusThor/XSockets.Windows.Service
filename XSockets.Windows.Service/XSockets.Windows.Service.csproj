@@ -43,31 +43,36 @@
     <Reference Include="System.Data" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml" />
-    <Reference Include="XSockets.Core">
+    <Reference Include="XSockets.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=d4437d3567d14259, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Dependencies\XSockets.Core.dll</HintPath>
     </Reference>
-    <Reference Include="XSockets.Core.Common">
+    <Reference Include="XSockets.Core.Common, Version=2.4.0.0, Culture=neutral, PublicKeyToken=d4437d3567d14259, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Dependencies\XSockets.Core.Common.dll</HintPath>
     </Reference>
-    <Reference Include="XSockets.Core.Communication">
+    <Reference Include="XSockets.Core.Communication, Version=2.4.0.0, Culture=neutral, PublicKeyToken=d4437d3567d14259, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Dependencies\XSockets.Core.Communication.dll</HintPath>
     </Reference>
-    <Reference Include="XSockets.Extensibility.Handlers">
+    <Reference Include="XSockets.Extensibility.Handlers, Version=2.3.0.0, Culture=neutral, PublicKeyToken=d4437d3567d14259, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Dependencies\XSockets.Extensibility.Handlers.dll</HintPath>
     </Reference>
-    <Reference Include="XSockets.Extensibility.Interceptors">
-      <HintPath>..\Dependencies\XSockets.Extensibility.Interceptors.dll</HintPath>
-    </Reference>
-    <Reference Include="XSockets.Plugin.Framework">
+    <Reference Include="XSockets.Plugin.Framework, Version=1.4.2.0, Culture=neutral, PublicKeyToken=d4437d3567d14259, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Dependencies\XSockets.Plugin.Framework.dll</HintPath>
     </Reference>
-    <Reference Include="XSockets.Plugin.Framework.Core">
+    <Reference Include="XSockets.Plugin.Framework.Core, Version=1.4.2.0, Culture=neutral, PublicKeyToken=d4437d3567d14259, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Dependencies\XSockets.Plugin.Framework.Core.dll</HintPath>
     </Reference>
-    <Reference Include="XSockets.Protocol">
+    <Reference Include="XSockets.Protocol, Version=2.4.0.0, Culture=neutral, PublicKeyToken=d4437d3567d14259, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Dependencies\XSockets.Protocol.dll</HintPath>
     </Reference>
-    <Reference Include="XSockets.Server">
+    <Reference Include="XSockets.Server, Version=2.4.0.0, Culture=neutral, PublicKeyToken=d4437d3567d14259, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Dependencies\XSockets.Server.dll</HintPath>
     </Reference>
   </ItemGroup>

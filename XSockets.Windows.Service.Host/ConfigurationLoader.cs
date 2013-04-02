@@ -1,65 +1,59 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
-using System.Net;
 using XSockets.Core.Common.Configuration;
 using XSockets.Plugin.Framework.Core.Attributes;
 
 namespace XSockets.Windows.Service.Host
 {
+    /// <summary>
+    /// Get the XSockets.NET Server configuration
+    /// </summary>
     [Export(typeof(IConfigurationLoader))]
     public class ConfigurationLoader : IConfigurationLoader
     {
-        public IConfigurationSettings Settings = null;
+        public IConfigurationSettings _settings = null;
 
-        public Uri GetUri(string url)
+        public Uri GetUri(string location)
         {
-            return new Uri(url);
-        }
-
-
-        public IPEndPoint CreateIPEndpoint(Uri uri)
-        {
-            IPAddress ipAddress;
-            IPEndPoint ipEndPoint = null;
-            if (IPAddress.TryParse(uri.Host, out ipAddress))
-                ipEndPoint = new IPEndPoint(ipAddress, uri.Port);
-
-            else
+            try
             {
-                var addr = Dns.GetHostAddresses(uri.Host);
-                if (addr.Any())
-                    ipEndPoint = new IPEndPoint(addr[0], uri.Port);
+                return new Uri(location);
+            }
+            catch (Exception)
+            {
+
+                return new Uri(string.Format("ws://{0}", location));
             }
 
-            return ipEndPoint;
         }
 
+        /// <summary>
+        /// Get server settings from config file.
+        /// </summary>
         public IConfigurationSettings ConfigurationSettings
         {
             get
             {
-                if (Settings == null)
+                if (this._settings == null)
                 {
-                    var uri = GetUri(ConfigurationManager.AppSettings["XSockets.Url"]); // Reading from app.config
+                    var uri = GetUri(ConfigurationManager.AppSettings["XSockets.Url"]);
 
-                    Settings = new Core.Configuration.ConfigurationSettings
+                    this._settings = new XSockets.Core.Configuration.ConfigurationSettings
                     {
-
                         Port = uri.Port,
-                        //Origin = new List<string> { "*" },  // Specify your origins here e.g http://xsockets.net
-                        Origin = ConfigurationManager.AppSettings["XSockets.Origins"].Split(',').ToList(),  // Reading from app.config  
+                        Origin = ConfigurationManager.AppSettings["XSockets.Origins"].Split(',').ToList(),
                         Location = uri.Host,
                         Scheme = uri.Scheme,
                         Uri = uri,
                         BufferSize = 8192,
                         RemoveInactiveStorageAfterXDays = 7,
                         RemoveInactiveChannelsAfterXMinutes = 30,
-                        NumberOfAllowedConections = -1,
-                        Endpoint = CreateIPEndpoint(uri)
+                        NumberOfAllowedConections = -1
                     };
                 }
-                return Settings;
+                return this._settings;
             }
         }
     }
