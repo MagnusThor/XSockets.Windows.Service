@@ -5,6 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSockets.Windows.Service", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{1E42791D-E5F8-4C83-BD00-FD541EE406F8}"
 	ProjectSection(SolutionItems) = preProject
+		Dependencies\ServiceStack.Text.dll = Dependencies\ServiceStack.Text.dll
 		Dependencies\XSockets.Core.Common.dll = Dependencies\XSockets.Core.Common.dll
 		Dependencies\XSockets.Core.Communication.dll = Dependencies\XSockets.Core.Communication.dll
 		Dependencies\XSockets.Core.dll = Dependencies\XSockets.Core.dll
@@ -12,6 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencie
 		Dependencies\XSockets.Plugin.Framework.Core.dll = Dependencies\XSockets.Plugin.Framework.Core.dll
 		Dependencies\XSockets.Plugin.Framework.dll = Dependencies\XSockets.Plugin.Framework.dll
 		Dependencies\XSockets.Protocol.dll = Dependencies\XSockets.Protocol.dll
+		Dependencies\XSockets.Serialization.dll = Dependencies\XSockets.Serialization.dll
 		Dependencies\XSockets.Server.dll = Dependencies\XSockets.Server.dll
 	EndProjectSection
 EndProject

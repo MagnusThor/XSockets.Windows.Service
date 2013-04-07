@@ -43,7 +43,7 @@ namespace XSockets.Windows.Service.Host
                     this._settings = new XSockets.Core.Configuration.ConfigurationSettings
                     {
                         Port = uri.Port,
-                        Origin = ConfigurationManager.AppSettings["XSockets.Origins"].Split(',').ToList(),
+                        Origin = new HashSet<string>(ConfigurationManager.AppSettings["XSockets.Origins"].Split(',').ToArray()),
                         Location = uri.Host,
                         Scheme = uri.Scheme,
                         Uri = uri,

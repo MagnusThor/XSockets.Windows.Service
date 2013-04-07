@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\Dependencies\ServiceStack.Text.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Configuration.Install" />
@@ -70,6 +73,9 @@
     <Reference Include="XSockets.Protocol, Version=2.4.0.0, Culture=neutral, PublicKeyToken=d4437d3567d14259, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Dependencies\XSockets.Protocol.dll</HintPath>
+    </Reference>
+    <Reference Include="XSockets.Serialization">
+      <HintPath>..\Dependencies\XSockets.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="XSockets.Server, Version=2.4.0.0, Culture=neutral, PublicKeyToken=d4437d3567d14259, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
